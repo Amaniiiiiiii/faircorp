@@ -11,14 +11,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class JDBCconfiguration {
 
-    public static final String database_url = "jdbc:h2:mem:bigcorp;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"; // (2)
+    public static final String database_url = "jdbc:h2:mem:faircorp;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"; // (2)
     public static final String username = "sa";
     public static final String password = "";
 
     public static final Logger logger = LoggerFactory.getLogger(JDBCconfiguration.class);
 
     public static void main(String[] args) {
-
 
         try {
             Class.forName("org.h2.Drive"); // (1)
@@ -49,6 +48,7 @@ public class JDBCconfiguration {
 //            throw new DatabaseException("Impossible to insert site " +
 //                    site.getName(), e);
             logger.error("Impossible to insert site " + site.getName());
+            e.printStackTrace();
         }
     }
 }
