@@ -16,14 +16,13 @@ public class Room {
     @Column(nullable = false,length = 255)
     private String name;
 
-    private double currentTemprature;
+    private Double currentTemperature;
 
-    private double targetTemprature;
+    private Double targetTemperature;
 
     @OneToMany(mappedBy = "room")
     private Set<Heater> Heaters;
 
-    @OneToMany
-    @ManyToOne
+    @OneToMany(mappedBy = "room")
     private Set<Window> Windows;
 }
