@@ -17,6 +17,7 @@ public class Heater {
     private long power;
 
     @Column(nullable = false)
+    @ManyToOne
     private Room room;
 
     public Heater(Long id, String name, long power, Room room, HeaterStatus heaterStatus) {

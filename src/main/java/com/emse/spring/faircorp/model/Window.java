@@ -1,5 +1,7 @@
 package com.emse.spring.faircorp.model;
 
+import org.springframework.data.repository.cdi.Eager;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,12 +18,29 @@ public class Window {
     @Enumerated(EnumType.STRING)
     private WindowStatus windowStatus;
 
-    public Window() {
+    @ManyToOne
+    private Room room;
+
+    public Window(Room room) {
+        this.room = room;
     }
 
-    public Window(String name, WindowStatus status) {
-        this.windowStatus = status;
+    public Window(Long id, String name, WindowStatus windowStatus, Room room) {
+        this.id = id;
         this.name = name;
+        this.windowStatus = windowStatus;
+        this.room = room;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public Window() {
     }
 
     public Long getId() {

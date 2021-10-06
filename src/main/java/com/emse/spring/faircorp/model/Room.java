@@ -1,6 +1,7 @@
 package com.emse.spring.faircorp.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "ROOM")
@@ -18,4 +19,11 @@ public class Room {
     private double currentTemprature;
 
     private double targetTemprature;
+
+    @OneToMany(mappedBy = "room")
+    private Set<Heater> Heaters;
+
+    @OneToMany
+    @ManyToOne
+    private Set<Window> Windows;
 }
