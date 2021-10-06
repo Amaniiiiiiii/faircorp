@@ -1,9 +1,8 @@
 package com.emse.spring.faircorp.controller;
 
-import com.emse.spring.faircorp.data.JDBCconfiguration;
-import com.emse.spring.faircorp.data.Site;
+import com.emse.spring.faircorp.dataJDBC.JDBCconfiguration;
+import com.emse.spring.faircorp.dataJDBC.Site;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

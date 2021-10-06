@@ -1,4 +1,4 @@
-package com.emse.spring.faircorp.data;
+package com.emse.spring.faircorp.dataJDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

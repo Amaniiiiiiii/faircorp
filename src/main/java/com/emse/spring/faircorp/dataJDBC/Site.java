@@ -1,4 +1,4 @@
-package com.emse.spring.faircorp.data;
+package com.emse.spring.faircorp.dataJDBC;
 
 
 public class Site {
