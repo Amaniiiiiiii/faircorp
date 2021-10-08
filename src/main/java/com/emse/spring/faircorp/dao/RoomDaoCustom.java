@@ -5,5 +5,5 @@ import com.emse.spring.faircorp.model.Room;
 import java.util.List;
 
 public interface RoomDaoCustom {
-    List<Room> findRoomByName(String name);
+    Room findRoomByName(String name);
 }

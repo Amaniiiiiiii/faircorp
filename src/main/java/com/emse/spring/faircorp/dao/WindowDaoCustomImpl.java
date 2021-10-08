@@ -20,4 +20,11 @@ public class WindowDaoCustomImpl implements WindowDaoCustom{
                 .setParameter("status", WindowStatus.OPEN)
                 .getResultList();
     }
+
+    //EntityManager执行删除操作时需要调用execute
+    @Override
+    public int deleteAllWindowsInARoom(Long id) {
+        String jpql = "delete from Window w where w.room.id = :id";
+        return em.createQuery(jpql).setParameter("id",id).executeUpdate();
+    }
 }
