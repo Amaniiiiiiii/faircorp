@@ -6,8 +6,9 @@ import com.emse.spring.faircorp.model.WindowStatus;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
-
+//springboot会自动根据windowDaoCustom接口来寻找他的实现方法
 public class WindowDaoCustomImpl implements WindowDaoCustom{
+
     @PersistenceContext
     private EntityManager em;
 
