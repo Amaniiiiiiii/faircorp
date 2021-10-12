@@ -21,6 +21,12 @@ public class Window {
     @ManyToOne
     private Room room;
 
+    public Window(String name, WindowStatus windowStatus, Room room) {
+        this.name = name;
+        this.windowStatus = windowStatus;
+        this.room = room;
+    }
+
     public Window(Room room) {
         this.room = room;
     }
