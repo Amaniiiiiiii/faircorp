@@ -26,16 +26,20 @@ public class WindowController {
 
     @GetMapping // (5)
     public List<WindowDto> findAll() {
+        //http://localhost:8080/api/windows/-10
         return windowDao.findAll().stream().map(WindowDto::new).collect(Collectors.toList());  // (6)
     }
 
     @GetMapping(path = "/{id}")
     public WindowDto findById(@PathVariable Long id) {
+        //http://localhost:8080/api/windows/-10
         return windowDao.findById(id).map(WindowDto::new).orElse(null); // (7)
     }
 
     @PutMapping(path = "/{id}/switch")
     public WindowDto switchStatus(@PathVariable Long id) {
+        //http://localhost:8080/api/windows/-10/switch
+        //Use postman to test
         Window window = windowDao.findById(id).orElseThrow(IllegalArgumentException::new);
         window.setWindowStatus(window.getWindowStatus() == WindowStatus.OPEN ? WindowStatus.CLOSED: WindowStatus.OPEN);
         return new WindowDto(window);
@@ -44,6 +48,13 @@ public class WindowController {
     @PostMapping // (8)
     public WindowDto create(@RequestBody WindowDto dto) {
         /**
+         * {
+         *     "name": "Window wenxu111",
+         *     "windowStatus": "CLOSED",
+         *     "roomName": "Room1",
+         *     "roomId": -10
+         * }
+         * 这是不带id的
          * 传入的json会自动注入到对象里
          * 两种方式:
          * 1. 不定义id id是用来自增的
@@ -66,6 +77,7 @@ public class WindowController {
     }
 
     @DeleteMapping(path = "/{id}")
+    //http://localhost:8080/api/windows/-10
     public void delete(@PathVariable Long id) {
         windowDao.deleteById(id);
     }
