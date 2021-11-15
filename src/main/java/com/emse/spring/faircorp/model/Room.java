@@ -26,6 +26,24 @@ public class Room {
     @OneToMany(mappedBy = "room")
     private Set<Window> Windows;
 
+    public Room(Long id, Integer floor, String name, Double currentTemperature, Double targetTemperature) {
+        this.id = id;
+        this.floor = floor;
+        this.name = name;
+        this.currentTemperature = currentTemperature;
+        this.targetTemperature = targetTemperature;
+    }
+
+    public Room(Integer floor, String name, Double currentTemperature, Double targetTemperature) {
+        this.floor = floor;
+        this.name = name;
+        this.currentTemperature = currentTemperature;
+        this.targetTemperature = targetTemperature;
+    }
+
+    public Room() {
+    }
+
     public Long getId() {
         return id;
     }

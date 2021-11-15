@@ -40,4 +40,10 @@ class WindowDaoTest {
         List<Window> result = windowDao.findRoomOpenWindows(-10L);
         Assertions.assertThat(result).isEmpty();
     }
+
+    @Test
+    public void shouldGetWindowByRoomId(){
+        List<Window> result = windowDao.findByRoomId(-10L);
+        System.out.println(result.size());
+    }
 }

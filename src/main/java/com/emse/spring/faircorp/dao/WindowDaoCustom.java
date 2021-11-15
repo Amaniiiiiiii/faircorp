@@ -8,4 +8,6 @@ public interface WindowDaoCustom {
     List<Window> findRoomOpenWindows(Long id);
 
     int deleteAllWindowsInARoom(Long RoomId);
+
+    List<Window> findByRoomId(Long RoomId);
 }

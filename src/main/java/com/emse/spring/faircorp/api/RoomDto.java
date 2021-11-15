@@ -1,8 +1,11 @@
 package com.emse.spring.faircorp.api;
 
-import lombok.Data;
+import com.emse.spring.faircorp.model.Room;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class RoomDto {
     private Long id;
     private Integer floor;
@@ -10,5 +13,14 @@ public class RoomDto {
     private Double currentTemperature;
     private Double targetTemperature;
 
+    public RoomDto() {
+    }
 
+    public RoomDto(Room room){
+        this.id = room.getId();
+        this.name = room.getName();
+        this.floor = room.getFloor();
+        this.currentTemperature = room.getCurrentTemperature();
+        this.targetTemperature = room.getTargetTemperature();
+    }
 }

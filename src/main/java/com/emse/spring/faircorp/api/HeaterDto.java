@@ -5,12 +5,12 @@ import com.emse.spring.faircorp.model.HeaterStatus;
 import lombok.Getter;
 import lombok.Setter;
 
-@Setter
 @Getter
+@Setter
 public class HeaterDto {
     private Long id;
     private String name;
-    private long power;
+    private Long power;
     private HeaterStatus heaterStatus;
     private Long roomId;
 

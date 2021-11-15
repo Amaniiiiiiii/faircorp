@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-//CREATE TABLE SITE(ID VARCHAR(255) NOT NULL PRIMARY KEY, NAME VARCHAR(255) NOT NULL);
+//This is my test controller for jdbc
+//Other controllers are in the directory api :)
+// CREATE TABLE SITE(ID VARCHAR(255) NOT NULL PRIMARY KEY, NAME VARCHAR(255) NOT NULL);
 @RestController
 public class DataController {
 

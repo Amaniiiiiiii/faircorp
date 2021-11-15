@@ -2,6 +2,9 @@ package com.emse.spring.faircorp.model;
 
 import javax.persistence.*;
 
+/**
+ *
+ */
 @Entity
 @Table(name = "HEATER")
 public class Heater {
@@ -14,7 +17,7 @@ public class Heater {
     private String name;
 
     @Column(nullable = true)
-    private long power;
+    private Long power;
 
     @JoinColumn(nullable = false)
     @ManyToOne
@@ -27,10 +30,16 @@ public class Heater {
         this.room = room;
     }
 
-    public Heater(Long id, String name, long power, Room room, HeaterStatus heaterStatus) {
+    public Heater(Long id, String name, Long power, Room room, HeaterStatus heaterStatus) {
         this.id = id;
         this.name = name;
         this.power = power;
+        this.room = room;
+        this.heaterStatus = heaterStatus;
+    }
+
+    public Heater(String name,HeaterStatus heaterStatus, Room room) {
+        this.name = name;
         this.room = room;
         this.heaterStatus = heaterStatus;
     }
@@ -55,11 +64,11 @@ public class Heater {
         this.name = name;
     }
 
-    public long getPower() {
+    public Long getPower() {
         return power;
     }
 
-    public void setPower(long power) {
+    public void setPower(Long power) {
         this.power = power;
     }
 
