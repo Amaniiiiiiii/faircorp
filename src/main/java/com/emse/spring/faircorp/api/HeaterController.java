@@ -11,9 +11,6 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * post可以改一改
- */
 @RestController
 @RequestMapping("/api/heaters")
 @Transactional
